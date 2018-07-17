@@ -5,6 +5,10 @@ import Decorate.Monittor;
 import Factory.Connection;
 import Factory.FirstFactory;
 import Factory.SecuredFactory;
+import Observer.Archiver;
+import Observer.Boss;
+import Observer.Client;
+import Observer.Database;
 
 public class Test {
     public static void main(String[] args) {
@@ -25,7 +29,15 @@ public class Test {
         System.out.println("You are connecting with "+connection.description());
         */
 
+        Database database = new Database();
+        Archiver archiver = new Archiver();
+        Client client = new Client();
+        Boss boss = new Boss();
 
+        database.registerObserver(archiver);
+        database.registerObserver(client);
+        database.registerObserver(boss);
+        database.editRecord("delete", "record 1");
 
     }
 }
