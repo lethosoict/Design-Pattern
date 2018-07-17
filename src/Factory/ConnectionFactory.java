@@ -8,5 +8,5 @@ public abstract class ConnectionFactory {
 
     }
 
-    protected abstract Factory.Connection CreateConnection(String type);
+    protected abstract Connection CreateConnection(String type);
 }

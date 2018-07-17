@@ -13,6 +13,9 @@ public class SecuredFactory extends ConnectionFactory {
         else if(type.equals("SQL Server")){
             return new  SecureSqlServerConnection();
         }
+        else if(type.equals("MySql")){
+            return new SecureMySqlConnection();
+        }
         return null;
     }
 }

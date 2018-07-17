@@ -2,7 +2,9 @@ import Decorate.Computer;
 import Decorate.Disk;
 import Decorate.Keyboard;
 import Decorate.Monittor;
+import Factory.Connection;
 import Factory.FirstFactory;
+import Factory.SecuredFactory;
 
 public class Test {
     public static void main(String[] args) {
@@ -15,6 +17,10 @@ public class Test {
         System.out.println(computer.description());
         */
 
-        FirstFactory factory = new FirstFactory("Oracle");
+        SecuredFactory factory;
+        factory = new SecuredFactory();
+
+        Connection connection = factory.CreateConnection("MySql");
+        System.out.println("You are connecting with "+connection.description());
     }
 }
