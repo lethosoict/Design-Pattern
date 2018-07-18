@@ -4,7 +4,7 @@ package ChainOfResponsibility;
  * Created by Phoebus Gannicus on 7/18/2018.
  */
 public class FrontEnd implements HelpInterface {
-
+    final int FRONT_END_HELP = 1;
     HelpInterface successor;
 
     public FrontEnd(HelpInterface s){
@@ -12,6 +12,10 @@ public class FrontEnd implements HelpInterface {
     }
 
     public void getHelp(int helpConstant) {
-
+        if(helpConstant != FRONT_END_HELP){
+            successor.getHelp(helpConstant);
+        }else{
+            System.out.println("This is the front end. Don`t you like it!");
+        }
     }
 }
