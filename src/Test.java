@@ -8,7 +8,8 @@ import Factory.SecuredFactory;
 import Observer.Archiver;
 import Observer.Boss;
 import Observer.Client;
-import Observer.Database;
+//import Observer.Database;
+import Singleton.*;
 
 public class Test {
     public static void main(String[] args) {
@@ -29,6 +30,7 @@ public class Test {
         System.out.println("You are connecting with "+connection.description());
         */
 
+        /*
         Database database = new Database();
         Archiver archiver = new Archiver();
         Client client = new Client();
@@ -38,6 +40,15 @@ public class Test {
         database.registerObserver(client);
         database.registerObserver(boss);
         database.editRecord("delete", "record 1");
+        */
+
+        Database database;
+        database = Database.getInstance("products");
+        System.out.println("This is the " + database.getName() + " database.");
+
+        database = Database.getInstance("employees");
+        System.out.println("This is the " + database.getName() + " database.");
+
 
     }
 }
