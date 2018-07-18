@@ -1,3 +1,6 @@
+import ChainOfResponsibility.Application;
+import ChainOfResponsibility.FrontEnd;
+import ChainOfResponsibility.IntermediateLayer;
 import Decorate.Computer;
 import Decorate.Disk;
 import Decorate.Keyboard;
@@ -29,6 +32,7 @@ public class Test {
         System.out.println("You are connecting with "+connection.description());
         */
 
+        /*
         Database database = new Database();
         Archiver archiver = new Archiver();
         Client client = new Client();
@@ -38,6 +42,16 @@ public class Test {
         database.registerObserver(client);
         database.registerObserver(boss);
         database.editRecord("delete", "record 1");
+        */
+
+        final int FRONT_END_HELP = 1;
+        final int INTERMEDIATE_LAYER_HELP = 1;
+        final int GENERAL_HELP = 1;
+
+        Application app = new Application();
+        IntermediateLayer intermediateLayer = new IntermediateLayer(app);
+        FrontEnd frontEnd = new FrontEnd(intermediateLayer);
+        frontEnd.getHelp(GENERAL_HELP);
 
     }
 }

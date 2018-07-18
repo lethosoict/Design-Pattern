@@ -5,7 +5,7 @@ package ChainOfResponsibility;
  */
 public class Application implements HelpInterface {
     public Application(){
-        
+
     }
 
     @Override
