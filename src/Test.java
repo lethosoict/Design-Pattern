@@ -12,6 +12,7 @@ import Observer.Archiver;
 import Observer.Boss;
 import Observer.Client;
 import Observer.Database;
+import TemplateMethod.Robot;
 
 public class Test {
     public static void main(String[] args) {
@@ -44,6 +45,7 @@ public class Test {
         database.editRecord("delete", "record 1");
         */
 
+        /*
         final int FRONT_END_HELP = 1;
         final int INTERMEDIATE_LAYER_HELP = 1;
         final int GENERAL_HELP = 1;
@@ -52,6 +54,10 @@ public class Test {
         IntermediateLayer intermediateLayer = new IntermediateLayer(app);
         FrontEnd frontEnd = new FrontEnd(intermediateLayer);
         frontEnd.getHelp(GENERAL_HELP);
+        */
+
+        Robot robot = new Robot();
+        robot.go();
 
     }
 }
