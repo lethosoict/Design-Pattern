@@ -1,20 +1,12 @@
-import ChainOfResponsibility.Application;
-import ChainOfResponsibility.FrontEnd;
-import ChainOfResponsibility.IntermediateLayer;
-import Decorate.Computer;
-import Decorate.Disk;
-import Decorate.Keyboard;
-import Decorate.Monittor;
-import Factory.Connection;
-import Factory.FirstFactory;
-import Factory.SecuredFactory;
-import Observer.Archiver;
-import Observer.Boss;
-import Observer.Client;
-import Observer.Database;
-import TemplateMethod.Robot;
+import Iterator.Division;
+import Iterator.DivisionIterator;
+import Iterator.VP;
 
 public class Test {
+
+    Division division;
+    DivisionIterator iterator;
+
     public static void main(String[] args) {
 
         /* //Decorate Pattern Design
@@ -56,8 +48,24 @@ public class Test {
         frontEnd.getHelp(GENERAL_HELP);
         */
 
+        /*
         Robot robot = new Robot();
         robot.go();
+        */
 
+
+    }
+
+    public Test(){
+        division =new Division("Sale");
+        division.add("Carol");
+        division.add("Alice");
+        division.add("Johnson");
+
+        iterator =division.iterator();
+        while (iterator.hasNext()){
+            VP vp = iterator.hasNext();
+            vp.print();
+        }
     }
 }
